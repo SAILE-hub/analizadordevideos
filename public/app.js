@@ -56,10 +56,18 @@ async function analyze() {
             })
         });
 
+        // Detectar si la respuesta no es JSON (por ejemplo HTML de una 404/redirect)
+        const contentType = response.headers.get('content-type') || '';
+
+        if (!contentType.includes('application/json')) {
+            const text = await response.text();
+            throw new Error(`Respuesta inesperada del servidor: ${contentType} - ${text.slice(0,200)}`);
+        }
+
         const data = await response.json();
 
         if (!response.ok) {
-            throw new Error(data.error);
+            throw new Error(data.error || 'Error en la petición');
         }
 
         renderClips(data.clips);
