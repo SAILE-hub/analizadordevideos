@@ -1,1 +1,6 @@
+
+# Proxy API routes to the Netlify function named `server`
+/api/*  /.netlify/functions/server/:splat 200
+
+# SPA fallback (keep last)
 /*    /index.html   200
