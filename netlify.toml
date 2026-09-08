@@ -1,0 +1,8 @@
+[build]
+  command = "npm ci"
+  publish = "public"
+  functions = "netlify/functions"
+
+[dev]
+  command = "npm run dev:netlify"
+  port = 8888
