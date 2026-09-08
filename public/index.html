@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Clip Finder</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="container">
+
+        <header>
+            <div class="header-left">
+                <h1>Clip Finder</h1>
+                <p>Encuentra los mejores momentos de un video.</p>
+            </div>
+
+            <aside class="video-section">
+                <div class="video-container">
+                    <div id="videoPlayer"></div>
+                </div>
+
+                <p class="video-title">Video</p>
+            </aside>
+        </header>
+
+        <section class="controls">
+
+            <input
+                id="videoUrl"
+                type="text"
+                placeholder="Pega el enlace de YouTube..."
+            >
+
+            <select id="clipCount">
+                <option value="3">3 clips</option>
+                <option value="5" selected>5 clips</option>
+                <option value="10">10 clips</option>
+                <option value="15">15 clips</option>
+                <option value="20">20 clips</option>
+            </select>
+
+            <button id="analyzeButton">
+                Analizar
+            </button>
+
+        </section>
+
+        <div id="status"></div>
+
+        <section class="workspace">
+
+            <div class="results-section">
+
+                <h2>Resultados</h2>
+
+                <div id="results" class="results"></div>
+
+            </div>
+
+            
+
+        </section>
+
+    </main>
+
+    <script src="app.js"></script>
+
+</body>
+
+</html>
